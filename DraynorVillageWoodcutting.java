@@ -84,12 +84,10 @@ public class DraynorVillageWoodcutting extends AbstractScript {
         NPC banker = NPCs.closest(npc -> npc != null && npc.hasAction("Bank")); // Bankers have a unique option called "Bank"; search for it
         if (banker != null && banker.interact("Bank")) {
             boolean slept = sleepUntil(() -> Bank.isOpen(), sleepTimerMax);
-            if (slept) {
-                if (Bank.depositAllExcept(item -> item != null && item.getName().contains("axe"))) { // Deposit all items except your axe (used to chop trees)
-                    boolean slept2 = sleepUntil( () -> !Inventory.isFull(), sleepTimerMax);
-                    if(slept2 && Bank.close()) {
-                        sleepUntil( () -> !Bank.isOpen(), sleepTimerMax);
-                    }
+            if (slept && Bank.depositAllExcept(item -> item != null && item.getName().contains("axe"))) { // Deposit all items except your axe (used to chop trees)
+                boolean slept2 = sleepUntil( () -> !Inventory.isFull(), sleepTimerMax);
+                if(slept2 && Bank.close()) {
+                    sleepUntil( () -> !Bank.isOpen(), sleepTimerMax);
                 }
             }
         }
