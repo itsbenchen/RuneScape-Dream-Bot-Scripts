@@ -7,7 +7,7 @@ The scripts are meant to automate tasks to make things easier to do while the pl
 
 ## What is DreamBot?
 
-DreamBot is essentially a Old-school RuneScape Botting program that runs scripts to automate tasks as if you're playing.
+DreamBot is essentially an Old-school RuneScape Botting program that runs scripts to automate tasks in the game.
 More information about the program and the likes can be referenced here: https://dreambot.org/
 
 For more extensive info about DreamBot's API, you can check out: https://dreambot.org/javadocs/ 
